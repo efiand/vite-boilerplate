@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "mblode.twig-language-2",
+    "stylelint.vscode-stylelint",
+    "vue.volar"
+  ]
+}
