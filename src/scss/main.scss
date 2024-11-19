@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+
+  @each $icon in $icons {
+    --icon-#{$icon}: url("../icons/#{$icon}.svg");
+  }
+}

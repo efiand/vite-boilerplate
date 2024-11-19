@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/src/scss/main.scss">
+    <script src="/src/main.js" type="module"></script>
+    {% if isDev %}
+      <script src="/src/dev.js" type="module"></script>
+    {% endif %}
+  </head>
+  <body></body>
+</html>

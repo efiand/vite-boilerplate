@@ -1,0 +1,21 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "emmet.includeLanguages": {
+    "twig": "html"
+  },
+  "emmet.preferences": {
+    "output.reverseAttributes": true
+  },
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.validate": ["javascript", "vue"],
+  "files.associations": {
+    "*.html": "twig"
+  },
+  "stylelint.validate": ["scss", "vue"]
+}
