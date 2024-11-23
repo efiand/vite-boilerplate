@@ -5,9 +5,13 @@ import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
 
+import { imageSet, processAllImages, processImage } from "./tools/image.js";
 import { renderTwig } from "./tools/twig.js";
 
 const CWD = process.cwd();
+
+// Обрабатываем накопленные неоптимизированные изображения
+processAllImages();
 
 export default defineConfig(async ({ mode }) => {
   const isDev = mode === "development";
@@ -53,6 +57,12 @@ export default defineConfig(async ({ mode }) => {
               server.ws.send({ type: "full-reload" });
             } else if (filePath.includes("src/icons") && extname === ".svg") {
               server.restart();
+            } else if (
+              eventName === "add" &&
+              filePath.includes("raw/") &&
+              imageSet.has(extname)
+            ) {
+              processImage(filePath);
             }
           };
           server.watcher.on("add", handle("add"));

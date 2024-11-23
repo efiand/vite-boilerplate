@@ -5,6 +5,11 @@ dist
 node_modules
 yarn.lock
 
+# Temp
+raw/*
+!raw/icons/README.md
+!raw/images/README.md
+
 # Editor directories and files
 *.njsproj
 *.ntvs*

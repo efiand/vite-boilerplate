@@ -18,7 +18,7 @@ export default [
       vue: pluginVue,
     },
     rules: {
-      "no-console": [strictMode ? "warn" : "off", { allow: ["error"] }],
+      "no-console": [strictMode ? "warn" : "off", { allow: ["error", "info"] }],
       "no-debugger": strictMode ? "warn" : "off",
       "vue/component-name-in-template-casing": [
         "error",
