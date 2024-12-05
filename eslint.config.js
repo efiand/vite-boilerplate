@@ -3,9 +3,8 @@ import { readGitignoreFiles } from "eslint-gitignore";
 import perfectionist from "eslint-plugin-perfectionist";
 import pluginVue from "eslint-plugin-vue";
 
-const { npm_lifecycle_event } = process.env;
-const strictMode =
-  npm_lifecycle_event.includes("lint") || npm_lifecycle_event.includes("build");
+const scriptName = process?.env?.npm_lifecycle_event || "";
+const strictMode = scriptName.includes("lint") || scriptName.includes("build");
 
 export default [
   { files: ["**/*.{js,vue}"] },
