@@ -13,6 +13,7 @@ const CWD = process.cwd();
 // Обрабатываем накопленные неоптимизированные изображения
 processAllImages();
 
+/** @type {import('vite').UserConfig} */
 export default defineConfig(async ({ mode }) => {
   const isDev = mode === "development";
 
@@ -46,7 +47,7 @@ export default defineConfig(async ({ mode }) => {
       vue(),
       {
         configureServer(server) {
-          const handle = (eventName) => async (rawPath) => {
+          const handle = (eventName) => (rawPath) => {
             const filePath = path.relative(CWD, rawPath).replaceAll("\\", "/");
             const extname = path.extname(filePath);
 

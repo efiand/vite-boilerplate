@@ -1,3 +1,1 @@
-export default (page = "index") => {
-  return { page };
-};
+export default (page = "index") => ({ page });
